@@ -1,7 +1,3 @@
-
-
-
-
 import { useState } from "react";
 import Logo from "../assets/logo-text.png";
 
@@ -10,8 +6,10 @@ const Nav = () => {
 
   return (
     <>
-    <nav className="sticky top-0 z-50 max-w-300 mx-auto mt-5 px-5 md:px-8 flex items-center justify-between bg-white">
-
+    <div className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+      
+      <nav className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between py-4">
+ 
         {/* Mobile Menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -19,7 +17,7 @@ const Nav = () => {
         >
           ☰
         </button>
-
+      
         {/* Logo */}
         <img
           src={Logo}
@@ -38,9 +36,7 @@ const Nav = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-2 md:gap-4">
-          <button className="text-sm md:text-base">
-            Sign In
-          </button>
+          <button className="text-sm md:text-base">Sign In</button>
 
           <button className="bg-pink-500 text-white rounded-full px-3 py-1 md:px-5 md:py-2 text-sm md:text-base">
             Sign Up
@@ -58,7 +54,9 @@ const Nav = () => {
           <li>Contact</li>
         </ul>
       )}
+      </div>.
     </>
+    
   );
 };
 
