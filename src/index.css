@@ -1,2 +1,390 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+
+
+
+/* ================================
+   TECHNOLOGY SECTION
+================================ */
+
+.technology-section {
+  width: 100%;
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.technology-container {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.technology-heading {
+  margin-bottom: 35px;
+}
+
+.technology-heading h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.technology-heading h2 span {
+  color: #d9469f;
+}
+
+.technology-heading p {
+  margin-top: 8px;
+  color: #8a8f98;
+  font-size: 14px;
+}
+
+
+/* ================================
+   GRID + SIDEBAR
+================================ */
+
+.technology-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+
+/* ================================
+   TECHNOLOGY GRID
+================================ */
+
+.technology-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.technology-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  transition: 0.2s ease;
+}
+
+.technology-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Top */
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 42px;
+}
+
+.technology-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.technology-badge {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #eefbf5;
+  color: #54a887;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Name */
+
+.technology-card h3 {
+  margin: 17px 0 8px;
+  font-size: 18px;
+  color: #171b25;
+}
+
+
+/* Description */
+
+.technology-description {
+  min-height: 62px;
+  margin: 0;
+  color: #858b95;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* Info */
+
+.technology-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.category-chip {
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #f4f5f7;
+  color: #68707d;
+  font-size: 10px;
+}
+
+.difficulty {
+  color: #8a9099;
+  font-size: 10px;
+}
+
+.rating {
+  margin-left: auto;
+  color: #6f7580;
+  font-size: 11px;
+}
+
+
+/* ================================
+   ADD BUTTON
+================================ */
+
+.add-button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 7px;
+  background: #171d2b;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-button:hover {
+  background: #252d3d;
+}
+
+.add-button.added {
+  background: #e9eaed;
+  color: #777d87;
+  cursor: not-allowed;
+}
+
+
+/* ================================
+   YOUR STACK SIDEBAR
+================================ */
+
+.stack-sidebar {
+  position: sticky;
+  top: 20px;
+  min-height: 250px;
+  padding: 25px;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.stack-sidebar h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #20242d;
+}
+
+.selected-count {
+  margin: 6px 0 22px;
+  color: #a2a6ad;
+  font-size: 12px;
+}
+
+
+/* Empty */
+
+.empty-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  text-align: center;
+}
+
+.empty-stack p {
+  color: #c3c6cb;
+  font-size: 13px;
+}
+
+
+/* Stack items */
+
+.stack-items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stack-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.stack-item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stack-item-info strong {
+  color: #30343c;
+  font-size: 12px;
+}
+
+.stack-item-info span {
+  margin-top: 2px;
+  color: #a0a4aa;
+  font-size: 9px;
+}
+
+.remove-button {
+  border: none;
+  background: transparent;
+  color: #c5c8cd;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #ef6c72;
+}
+
+
+/* Remove all */
+
+.remove-all-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 10px;
+  border: 1px solid #f0dddd;
+  border-radius: 7px;
+  background: white;
+  color: #df7d7d;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.remove-all-button:hover {
+  background: #fff6f6;
+}
+
+
+/* ================================
+   TABLET
+   2 COLUMNS
+================================ */
+
+@media (max-width: 1024px) {
+
+  .technology-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stack-sidebar {
+    position: static;
+  }
+}
+
+
+/* ================================
+   MOBILE
+   1 COLUMN
+================================ */
+
+@media (max-width: 640px) {
+
+  .technology-section {
+    padding: 45px 0;
+  }
+
+  .technology-container {
+    width: 92%;
+  }
+
+  .technology-heading {
+    margin-bottom: 25px;
+  }
+
+  .technology-heading h2 {
+    font-size: 25px;
+  }
+
+  .technology-heading p {
+    font-size: 12px;
+  }
+
+  .technology-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .technology-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .technology-card {
+    padding: 18px;
+  }
+
+  .technology-card h3 {
+    font-size: 17px;
+  }
+
+  .technology-description {
+    min-height: auto;
+    font-size: 12px;
+  }
+
+  .stack-sidebar {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .stack-sidebar h2 {
+    font-size: 18px;
+  }
+}

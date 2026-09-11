@@ -1,5 +1,6 @@
 import Banner from "./components/Banner";
 import Nav from "./components/Nav";
+import Technology from "./components/Technologies";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   
  <Nav></Nav>
  <Banner></Banner>
+ <Technology></Technology>
   
   </>;
 }
