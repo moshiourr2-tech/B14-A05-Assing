@@ -38,6 +38,7 @@ const Technology = () => {
 
   return (
     <section className="w-full bg-white py-10 px-4 sm:px-6 lg:px-8">
+    
       <div className="mx-auto max-w-7xl">
         <div className="mb-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
@@ -119,11 +120,9 @@ const Technology = () => {
             </p>
 
             {stack.length === 0 ? (
-           <div className="mt-8 flex items-center justify-center rounded-md border border-dashed border-slate-300 px-4 py-4 text-center">
-  <p className="text-xs text-slate-400">
-    Your stack is empty
-  </p>
-</div>
+              <div className="mt-8 flex items-center justify-center rounded-md border border-dashed border-slate-300 px-4 py-4 text-center">
+                <p className="text-xs text-slate-400">Your stack is empty</p>
+              </div>
             ) : (
               <>
                 <div className="mt-5 space-y-3">
