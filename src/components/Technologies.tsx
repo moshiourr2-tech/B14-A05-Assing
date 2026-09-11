@@ -17,6 +17,7 @@ const technologies = technologiesData as Technology[];
 const Technology = () => {
   const [stack, setStack] = useState<Technology[]>([]);
 
+  // Add technology
   const addToStack = (technology: Technology) => {
     const alreadyAdded = stack.some(
       (item) => item.id === technology.id
@@ -33,22 +34,29 @@ const Technology = () => {
     ]);
   };
 
+  // Remove one technology
   const removeFromStack = (id: string) => {
     setStack((previousStack) =>
       previousStack.filter((item) => item.id !== id)
     );
   };
 
+  // Remove everything
   const removeAll = () => {
     setStack([]);
   };
 
   return (
     <section className="technology-section">
+
       <div className="technology-container">
 
-        {/* Heading */}
+        {/* =========================
+            SECTION HEADING
+        ========================= */}
+
         <div className="technology-heading">
+
           <h2>
             Explore the{" "}
             <span>Technologies</span>
@@ -57,12 +65,21 @@ const Technology = () => {
           <p>
             Pick one technology per category to build your ideal stack.
           </p>
+
         </div>
 
-        {/* Main content */}
-        <div className="technology-layout">
 
-          {/* Technology Grid */}
+        {/* =========================
+            TECHNOLOGY + STACK
+        ========================= */}
+
+        <div className="technology-content">
+
+
+          {/* =========================
+              TECHNOLOGY GRID
+          ========================= */}
+
           <div className="technology-grid">
 
             {technologies.map((technology) => {
@@ -72,13 +89,14 @@ const Technology = () => {
               );
 
               return (
-                <div
+                <article
                   className="technology-card"
                   key={technology.id}
                 >
 
-                  {/* Top */}
-                  <div className="card-top">
+                  {/* ICON + BADGE */}
+
+                  <div className="technology-card-header">
 
                     <img
                       src={technology.icon}
@@ -92,18 +110,26 @@ const Technology = () => {
 
                   </div>
 
-                  {/* Name */}
-                  <h3>{technology.name}</h3>
 
-                  {/* Description */}
+                  {/* TECHNOLOGY NAME */}
+
+                  <h3>
+                    {technology.name}
+                  </h3>
+
+
+                  {/* DESCRIPTION */}
+
                   <p className="technology-description">
                     {technology.description}
                   </p>
 
-                  {/* Info */}
-                  <div className="technology-info">
 
-                    <span className="category-chip">
+                  {/* CATEGORY / DIFFICULTY / RATING */}
+
+                  <div className="technology-details">
+
+                    <span className="category">
                       {technology.category}
                     </span>
 
@@ -117,94 +143,129 @@ const Technology = () => {
 
                   </div>
 
-                  {/* Button */}
+
+                  {/* ADD BUTTON */}
+
                   <button
-                    className={`add-button ${
-                      isAdded ? "added" : ""
+                    className={`stack-button ${
+                      isAdded ? "button-added" : ""
                     }`}
-                    onClick={() => addToStack(technology)}
                     disabled={isAdded}
+                    onClick={() =>
+                      addToStack(technology)
+                    }
                   >
+
                     {isAdded
                       ? "✓ Added to Stack"
                       : "Add to Stack"}
+
                   </button>
 
-                </div>
+                </article>
               );
             })}
 
           </div>
 
-          {/* Your Stack */}
-          <aside className="stack-sidebar">
 
-            <h2>Your Stack</h2>
+          {/* =========================
+              YOUR STACK
+          ========================= */}
 
-            <p className="selected-count">
+          <aside className="your-stack">
+
+            <h3>
+              Your Stack
+            </h3>
+
+
+            <p className="stack-count">
               {stack.length} Technology
-              {stack.length !== 1 ? "ies" : "y"} Selected
+              {stack.length === 1 ? "" : "ies"} Selected
             </p>
+
+
+            {/* EMPTY STATE */}
 
             {stack.length === 0 ? (
 
-              <div className="empty-stack">
-                <p>Your stack is empty.</p>
+              <div className="stack-empty">
+
+                <p>
+                  Your stack is empty.
+                </p>
+
               </div>
 
             ) : (
 
-              <>
+              /* SELECTED TECHNOLOGIES */
 
-                <div className="stack-items">
+              <div className="stack-list">
 
-                  {stack.map((technology) => (
+                {stack.map((technology) => (
 
-                    <div
-                      className="stack-item"
-                      key={technology.id}
-                    >
+                  <div
+                    className="stack-list-item"
+                    key={technology.id}
+                  >
 
-                      <img
-                        src={technology.icon}
-                        alt={technology.name}
-                      />
+                    <img
+                      src={technology.icon}
+                      alt={technology.name}
+                    />
 
-                      <div className="stack-item-info">
-                        <strong>{technology.name}</strong>
-                        <span>{technology.category}</span>
-                      </div>
 
-                      <button
-                        className="remove-button"
-                        onClick={() =>
-                          removeFromStack(technology.id)
-                        }
-                        aria-label={`Remove ${technology.name}`}
-                      >
-                        ×
-                      </button>
+                    <div className="stack-item-text">
+
+                      <strong>
+                        {technology.name}
+                      </strong>
+
+                      <small>
+                        {technology.category}
+                      </small>
 
                     </div>
 
-                  ))}
 
-                </div>
+                    {/* REMOVE */}
+
+                    <button
+                      className="remove-button"
+                      onClick={() =>
+                        removeFromStack(technology.id)
+                      }
+                      aria-label={`Remove ${technology.name}`}
+                    >
+                      ×
+                    </button>
+
+                  </div>
+
+                ))}
+
+
+                {/* REMOVE ALL */}
 
                 <button
-                  className="remove-all-button"
+                  className="remove-all"
                   onClick={removeAll}
                 >
                   Remove All
                 </button>
 
-              </>
+              </div>
+
             )}
 
           </aside>
 
         </div>
+
       </div>
+
     </section>
   );
 };
