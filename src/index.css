@@ -1,3 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* React Toastify - middle right */
+.Toastify__toast-container--top-right {
+  position: fixed !important;
+  top: 70% !important;
+  right: 40px !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
+}

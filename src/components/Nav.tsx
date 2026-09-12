@@ -16,8 +16,7 @@ const Nav = () => {
           </button>
 
           <img
-            src={Logo}
-            alt="Dev Stack"
+            src={Logo} alt="Dev Stack"
             className="w-22.5 md:w-auto md:static absolute left-1/2 -translate-x-1/2"
           />
 

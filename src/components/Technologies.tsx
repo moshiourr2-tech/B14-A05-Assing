@@ -1,5 +1,6 @@
 import { useState } from "react";
 import technologiesData from "../Data/technologies.json";
+import { toast } from "react-toastify";
 
 interface Technology {
   id: string;
@@ -21,24 +22,34 @@ const Technology = () => {
     const exists = stack.some((item) => item.id === technology.id);
 
     if (exists) {
-      alert(`${technology.name} is already added!`);
+      toast.warning(`${technology.name} is already added!`);
       return;
     }
 
     setStack([...stack, technology]);
+
+    toast.success(`${technology.name} added to your stack!`);
   };
 
   const removeFromStack = (id: string) => {
     setStack(stack.filter((item) => item.id !== id));
+
+    toast.success("Technology removed from your stack!");
   };
 
   const removeAll = () => {
+    if (stack.length === 0) {
+      toast.info("Your stack is already empty!");
+      return;
+    }
+
     setStack([]);
+
+    toast.success("All technologies removed!");
   };
 
   return (
     <section className="w-full bg-white py-10 px-4 sm:px-6 lg:px-8">
-    
       <div className="mx-auto max-w-7xl">
         <div className="mb-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
